@@ -38,7 +38,7 @@ class DocsController < ApplicationController
     # raise
     @doc.user = current_user
     authorize @doc
-
+raise
     if @doc.save
       url = @doc.doc_asset.url
       @file = URI.open(url).read

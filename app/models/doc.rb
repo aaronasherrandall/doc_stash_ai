@@ -5,6 +5,6 @@ class Doc < ApplicationRecord
   # validates :file_name, :file_type, presence: true
   # validates :character_count, length: { maximum: 4000 }
 
-  has_one_attached :doc_asset
+  has_many_attached :doc_asset
   has_one_attached :image
 end
