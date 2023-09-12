@@ -1,18 +1,19 @@
 <div class="container">
   <%= render 'shared/sidebar' %>
-  <div class="row">
+  <div class="chat-index-container">
+    <div class="row">
     <% @chats.each do |chat| %>
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="chat-index-card">
           <div class="card-body">
             <h5 class="card-title"><%= chat.chat_name %></h5>
-            <%= link_to "Go to Chat", chat_path(chat), class: "btn btn-primary" %>
+            <div class="open-doc-button">
+              <%= link_to "Details", chat_path(chat), class: "btn btn-warning btn-open-doc" %>
+            </div>
           </div>
         </div>
       </div>
     <% end %>
-    <div class="col-md-4 mb-4">
-      <%= link_to "Create a new chat", new_chat_path, class: "btn btn-primary", role: "button" %>
     </div>
   </div>
 </div>
