@@ -67,7 +67,8 @@ export default class extends Controller {
     return this.data.get("addRemoveLinks") || true;
   }
   get uploadMultiple() {
-    return this.data.get("uploadMultiple") || false;
+    console.log(this.data.get("uploadMultiple"), "upload");
+    return this.data.get("uploadMultiple") || true;
   }
   get form() {
     return this.element.closest("form");
@@ -157,5 +158,6 @@ function createDropZone(controller) {
     uploadMultiple: controller.uploadMultiple,
     autoQueue: false,
   })
+  console.log(dropzone, "dropzone");
   return dropzone
 }
